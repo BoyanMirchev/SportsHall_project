@@ -28,7 +28,7 @@ public class SportsHall {
 
         // Симулиране на времето за обработка
         try {
-            Thread.sleep(300); // симулация
+            Thread.sleep(300); // малко изчакване
         } catch (InterruptedException e) {
             System.out.println("Interrupted");
         }
