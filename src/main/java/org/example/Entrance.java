@@ -7,20 +7,23 @@ package org.example;
 
 public class Entrance implements Runnable {
 
+ // Да се добави спецификатора за достъп Private
+
+    //Вече добавените константи за бройката!!!
+    private static final int VIP_GROUP_SIZE = 5;
+    private static final int REGULAR_GROUP_SIZE = 10;
+    private static final int ECONOMY_GROUP_SIZE = 20;
+
+    private final SportsHall hall;
+
     String name;
-    SportsHall hall;
     Thread t;
 
      // Конструктора, който създава и стартира нова нишка.
 
 
-    Entrance(String name, SportsHall hall) {
-        this.name = name;
+    public Entrance(SportsHall hall) {
         this.hall = hall;
-
-        // Създава се нова нишка с Runnable
-        t = new Thread(this, name);
-        t.start();
     }
 
     /*
@@ -30,8 +33,8 @@ public class Entrance implements Runnable {
 
     @Override
     public void run() {
-        hall.seatGroup("VIP", 5);
-        hall.seatGroup("REGULAR", 10);
-        hall.seatGroup("ECONOMY", 20);
+        hall.seatGroup("VIP", VIP_GROUP_SIZE);
+        hall.seatGroup("REGULAR", REGULAR_GROUP_SIZE);
+        hall.seatGroup("ECONOMY", ECONOMY_GROUP_SIZE);
     }
 }
