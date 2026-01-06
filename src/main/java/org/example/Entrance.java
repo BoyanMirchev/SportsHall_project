@@ -16,9 +16,6 @@ public class Entrance implements Runnable {
 
     private final SportsHall hall;
 
-    String name;
-    Thread t;
-
      // Конструктора, който създава и стартира нова нишка.
 
 
